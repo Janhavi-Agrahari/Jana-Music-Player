@@ -1,3 +1,5 @@
+<img src="Screenshot 2024-04-25 200448.png">
+
 # Jana-Music-Player
 
 Jana Music Player is a sleek and intuitive web-based music player that allows you to enjoy your favorite tunes effortlessly. Built with HTML, CSS, and JavaScript, this player offers a seamless experience for music enthusiasts.
@@ -17,6 +19,7 @@ Jana Music Player is a sleek and intuitive web-based music player that allows yo
     Built with responsive design for compatibility across devices
   </li>
 </ul>
+
 # Usage
 <ul>
   <li>
@@ -29,6 +32,7 @@ Jana Music Player is a sleek and intuitive web-based music player that allows yo
     Use the forward and backward buttons to navigate between songs.
   </li>
 </ul>
+
 # Technologies Used
 <ul>
   <li>
@@ -41,4 +45,6 @@ Jana Music Player is a sleek and intuitive web-based music player that allows yo
     JavaScript
   </li>
 </ul>
+
+
 
