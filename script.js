@@ -8,6 +8,7 @@ let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
 let songItem =Array.from(document.getElementsByClassName('songItem'));
+let songItemPlay = Array.from(document.getElementsByClassName('songItemPlay'));
 let songs = [
     {songName: "Bawara Mann", filePath: "songs/1.mp3",coverPath:"cover/bawra_mann.jpg"},
     {songName: "Darmiyaan", filePath: "songs/2.mp3",coverPath:"cover/Darmiyaan.jpg"},
@@ -51,13 +52,15 @@ myProgressBar.addEventListener('change',()=>{
     audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
 })
 const makeAllPlays = ()=>{
-Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+    songItemPlay.forEach((element)=>{
     element.classList.remove('fa-circle-pause');
     element.classList.add('fa-circle-play');    
 })
 }
-Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{    
+songItemPlay.forEach((element)=>{
+    let pause = true;
     element.addEventListener('click',(e)=>{
+       if(pause){
         makeAllPlays();
         songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-circle-play');
@@ -69,6 +72,16 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         gif.style.opacity = 1;
         masterPlay.classList.remove('fa-circle-play');
         masterPlay.classList.add('fa-circle-pause');
+        pause = false;
+    }else{
+        pause=true;
+        e.target.classList.remove('fa-circle-pause');
+        e.target.classList.add('fa-circle-play');
+        audioElement.pause();
+        gif.style.opacity = 0;
+        masterPlay.classList.remove('fa-circle-pause');
+        masterPlay.classList.add('fa-circle-play');
+    }
 
     })
 })
